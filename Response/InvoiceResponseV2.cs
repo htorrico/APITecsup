@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace APITecsup.Responses
+namespace Response
 {
-    public class InvoiceResponse
+    public class InvoiceResponseV2
     {
-        public int InvoiceID { get; set; }
         public string Number { get; set; }
-        
+        public int Total { get; set; }
     }
 }

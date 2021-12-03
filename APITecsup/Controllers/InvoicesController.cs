@@ -1,6 +1,6 @@
 ﻿using APITecsup.Context;
 using APITecsup.Models;
-using APITecsup.Responses;
+using Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -13,6 +13,7 @@ using APITecsup.Models;
 
 namespace APITecsup.Controllers
 {
+    [Authorize]
     public class PeopleController : ApiController
     {
         private ExampleContext db = new ExampleContext();
