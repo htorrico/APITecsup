@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Response
 {
-    public class Class1
+    public class PersonResponse
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
     }
 }

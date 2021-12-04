@@ -10,18 +10,32 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using APITecsup.Context;
 using APITecsup.Models;
+using Response;
 
 namespace APITecsup.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     public class PeopleController : ApiController
     {
         private ExampleContext db = new ExampleContext();
 
+        [AllowAnonymous]
         // GET: api/People
-        public IQueryable<Person> GetPeople()
+        public List<PersonResponse> GetPeople()
         {
-            return db.People;
+
+            //Listado de base de datos
+            var people = db.People.ToList();
+
+            //Response del servicio
+            var response= (from c in people
+                           select new PersonResponse
+                          {
+                              FirstName=c.FirstName,
+                              LastName= c.LastName
+                          }).ToList();
+
+            return response;
         }
 
         // GET: api/People/5
